@@ -4,6 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import { configureStore, history } from './store/configureStore';
 import Root from './containers/Root';
 
+// if you want to set initialState, pass the variable.
 const store = configureStore();
 
 render(
