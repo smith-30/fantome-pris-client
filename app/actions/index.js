@@ -6,3 +6,15 @@ export function filterTable(filter) {
         filter
     };
 }
+
+export function play() {
+    return {
+        type: types.PLAY
+    };
+}
+
+export function ready() {
+    return {
+        type: types.READY
+    };
+}
