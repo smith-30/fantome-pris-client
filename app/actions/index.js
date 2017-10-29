@@ -18,3 +18,29 @@ export function ready() {
         type: types.READY
     };
 }
+
+export function open() {
+    return {
+        type: types.OPEN,
+    };
+}
+
+export function close() {
+    return {
+        type: types.CLOSE,
+    };
+}
+
+export function increment(id) {
+    return {
+        type: types.INCREMENT,
+        id,
+    };
+}
+
+export function decrement(id) {
+    return {
+        type: types.DECREMENT,
+        id,
+    };
+}

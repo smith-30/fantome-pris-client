@@ -13,7 +13,6 @@ const App = () =>
             {/* <footer className={footer}>
                 <Link to="/">Filterable Table</Link>
                 <Link to="/about">About</Link>
-                <Link to="/games">About</Link>
             </footer> */}
         {/* </div> */}
     </MuiThemeProvider>;
