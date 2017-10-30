@@ -6,10 +6,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { configureStore, history } from './store/configureStore';
 import Root from './containers/Root';
 
-const initialState = {game: [], groups: []};
-
 // if you want to set initialState, pass the variable.
-const store = configureStore(initialState);
+const store = configureStore();
 
 render(
     <MuiThemeProvider>
@@ -23,7 +21,7 @@ render(
 if (module.hot) {
     module.hot.accept('./containers/Root', () => {
         const newConfigureStore = require('./store/configureStore');
-        const newStore = newConfigureStore.configureStore(initialState);
+        const newStore = newConfigureStore.configureStore();
         const newHistory = newConfigureStore.history;
         const NewRoot = require('./containers/Root').default;
         render(

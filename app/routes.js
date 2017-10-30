@@ -1,7 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-// import FilterableTable from './containers/FilterableTable';
-// import Game from './containers/games/Game';
 import App from './containers/games/App';
 import About from './components/About';
 

@@ -1,13 +1,22 @@
 import * as types from '../actions/types';
 
-const game = (state, action) => {
+const initialState = {
+    wsConn: {},
+    isPlay: false,
+};
+
+const game = (state = initialState, action) => {
     switch (action.type) {
         case types.PLAY:
-            return true;
+            return Object.assign({}, state, {
+                isPlay: true
+            });
         case types.READY:
-            return false;
+            return Object.assign({}, state, {
+                isPlay: false
+            });
         default:
-            return state;
+            return initialState;
     }
 };
 

@@ -3,18 +3,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import { play, increment, decrement } from '../../actions';
+import { play, decrement } from '../../actions';
 import { filterableTable } from '../../styles/filterableTable.scss';
 
-const Game = ({ isPlay, onPlay, doInc, doDec }) => {
+const Game = ({ game, onPlay, doDec }) => {
+    console.log(game);
     return (
         <div className={filterableTable}>
-          { isPlay ? null : <RaisedButton
+        <RaisedButton
+          label="Play"
+          onClick={() => onPlay()} />
+          { game.isPlay ? null : <RaisedButton
                   label="Play"
                   onClick={() => onPlay()} /> }
-          <RaisedButton
-            label="Increment"
-            onClick={() => doInc(1)} />
           <RaisedButton
             label="Decrement"
             onClick={() => doDec(1)} />
@@ -23,26 +24,21 @@ const Game = ({ isPlay, onPlay, doInc, doDec }) => {
 };
 
 Game.propTypes = {
-    isPlay: PropTypes.bool,
+    game: PropTypes.object,
     onPlay: PropTypes.func,
-    doInc: PropTypes.func,
     doDec: PropTypes.func,
-    players: PropTypes.array,
 };
 
 const mapStateToProps = (state) => {
     return {
-        isPlay: state.isPlay,
-        players: state.users,
-        modal: state.modal,
+        game: state.game,
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onPlay: () => dispatch(play()),
-        doInc: (id) => dispatch(increment(id)),
-        doDec: (id) => dispatch(decrement(id))
+        doDec: (id) => dispatch(decrement(id)),
     };
 };
 

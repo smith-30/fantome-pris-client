@@ -44,3 +44,28 @@ export function decrement(id) {
         id,
     };
 }
+
+export function fetchCard() {
+    return{
+        type: types.FETCH_CARD
+    };
+}
+
+export function connectWS() {
+    return{
+        type: types.CONNECT_WS
+    };
+}
+
+
+export function closeWS() {
+    return{
+        type: types.CLOSE_WS
+    };
+}
+
+export function sendAnswer() {
+    return{
+        type: types.SEND_ANSWER
+    };
+}

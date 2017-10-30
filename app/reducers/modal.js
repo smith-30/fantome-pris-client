@@ -1,7 +1,7 @@
 import * as types from '../actions/types';
 
 const initialState = {
-    open: true,
+    open: false,
 };
 
 const modal = (state = initialState, action) => {
