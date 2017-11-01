@@ -6,6 +6,8 @@ import rootReducer from '../reducers';
 export const history = createHistory();
 const middleware = routerMiddleware(history);
 
+// create saga middleware.
+
 export function configureStore(initialState) {
     return createStore(
         rootReducer,

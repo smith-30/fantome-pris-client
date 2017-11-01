@@ -7,8 +7,10 @@ const initialState = {
 
 const card = (state = initialState, action) => {
     switch (action.type) {
-        case types.FETCH_CARD:
-            return state;
+        case types.FETCH_CARD_SUCCESS:
+            console.log(action);
+            return Object.assign({}, state, action.card);
+            // return state;
         default:
             return initialState;
     }

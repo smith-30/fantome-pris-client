@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-// import FlatButton from 'material-ui/FlatButton';
 
 import { increment, decrement, close } from '../../actions';
 import ResultModal from '../../components/games/ResultModal';

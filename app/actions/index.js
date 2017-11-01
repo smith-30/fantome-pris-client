@@ -51,6 +51,12 @@ export function fetchCard() {
     };
 }
 
+export function fetchCardSuccess() {
+    return{
+        type: types.FETCH_CARD_SUCCESS
+    };
+}
+
 export function connectWS() {
     return{
         type: types.CONNECT_WS

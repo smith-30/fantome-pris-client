@@ -7,7 +7,7 @@ import * as asyncModule from '../utils/asyncModule';
 const API_ROOT = process.env.API_ROOT;
 
 export function fetchCard() {
-    return fetch(`${API_ROOT}card`, {
+    return fetch(`${API_ROOT}games/card`, {
         mode: 'cors',
     })
     .then(asyncModule.checkStatus)

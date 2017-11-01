@@ -1,45 +1,50 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {Card, CardActions, CardMedia, CardTitle} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import { fetchCard } from '../../actions';
+import { deckField } from '../../styles/deckField.scss';
 
-import { increment, decrement, close } from '../../actions';
-import ResultModal from '../../components/games/ResultModal';
-
-const DeckField = ({ modal, players, doClose, doInc, doDec }) => {
-    return (
-      <ResultModal
-        modal={modal}
-        players={players}
-        doClose={doClose}
-        doInc={doInc}
-        doDec={doDec} />
-    );
-};
+// カードは横向きでいいかも
+const DeckField = ({card, game, drawCard}) => (
+  <div className={deckField}>
+    <Card>
+      <CardMedia
+        overlay={<CardTitle title="Draw Card" subtitle="" />}
+      >
+        <img src={card.src} alt="" />
+      </CardMedia>
+      <CardActions>
+        <FlatButton
+          label="Play"
+          disabled={game.isPlay}
+          onClick={() => drawCard()} />
+      </CardActions>
+    </Card>
+  </div>
+);
 
 DeckField.propTypes = {
-    modal: PropTypes.object,
-    players: PropTypes.array,
-    doClose: PropTypes.func,
-    doInc: PropTypes.func,
-    doDec: PropTypes.func,
+    game: PropTypes.object,
+    card: PropTypes.object,
+    drawCard: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
     return {
-        modal: state.modal,
-        players: state.users,
+        card: state.card,
+        game: state.game,
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchCard: () => dispatch(close()),
-        doInc: (id) => dispatch(increment(id)),
-        doDec: (id) => dispatch(decrement(id))
+        drawCard: () => dispatch(fetchCard()),
     };
 };
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(DeckField);

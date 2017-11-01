@@ -7,18 +7,15 @@ import { play, decrement } from '../../actions';
 import { filterableTable } from '../../styles/filterableTable.scss';
 
 const Game = ({ game, onPlay, doDec }) => {
-    console.log(game);
     return (
         <div className={filterableTable}>
-        <RaisedButton
-          label="Play"
-          onClick={() => onPlay()} />
-          { game.isPlay ? null : <RaisedButton
-                  label="Play"
-                  onClick={() => onPlay()} /> }
-          <RaisedButton
-            label="Decrement"
-            onClick={() => doDec(1)} />
+            <RaisedButton
+              label="Play"
+              onClick={() => onPlay()}
+              disabled={game.isPlay} />
+            <RaisedButton
+              label="Decrement"
+              onClick={() => doDec(1)} />
         </div>
     );
 };
