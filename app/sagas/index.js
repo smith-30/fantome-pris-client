@@ -5,12 +5,14 @@ import * as types from '../actions/types';
 // ワーカー Saga: FETCH_CARD Action によって起動する
 function* fetchCard() {
     // fetch card
-    const { card, error } = yield call(Api.fetchCard);
+    const {card, error} = yield call(Api.fetchCard);
 
     if (!card) {
         yield put({type: types.FETCH_CARD_FAILED, message: error.message});
         return;
     }
+
+    // Todo Websocket connect handling.
 
     try {
         // create websocket connection

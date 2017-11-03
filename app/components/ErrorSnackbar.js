@@ -8,7 +8,7 @@ const ErrorSnackbar = ({ errors }) => {
           <Snackbar
             open={errors.open}
             message={errors.message}
-            autoHideDuration={3000}
+            autoHideDuration={4000}
           />
       </div>
     );

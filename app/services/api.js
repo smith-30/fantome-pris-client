@@ -7,15 +7,13 @@ const API_ROOT = process.env.API_ROOT;
 const cardCount = 5;
 
 export function fetchCard() {
-    return fetch(`http://${API_ROOT}games/card`, {
+    return fetch(`http://${API_ROOT}games/car`, {
         mode: 'cors',
     })
     .then(asyncModule.checkStatus)
     .then(asyncModule.parseJSON)
-    .catch(error => ({ error }))
-    .then((data) => {
-        return data;
-    });
+    .then(card => ({ card }))
+    .catch(error => ({ error }));
 }
 
 export function connectWS() {

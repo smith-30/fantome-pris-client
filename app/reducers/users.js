@@ -22,6 +22,10 @@ const users = (state = [], action) => {
                 return user;
             });
         default:
+            if (state.length > 0) {
+                return state;
+            }
+
             let playerCount = urlParams.get('player');
             if (playerCount <= 1) {
                 playerCount = 1;
