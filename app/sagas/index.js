@@ -16,7 +16,7 @@ function* fetchCard() {
 
     try {
         // create websocket connection
-        const wsConn = yield call(Api.connectWS);
+        const wsConn = yield call(Api.connectWS, card.answer);
         yield put({type: types.CONNECT_WS, wsConn: wsConn});
 
         // change game status

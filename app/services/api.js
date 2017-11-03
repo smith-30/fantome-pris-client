@@ -4,10 +4,9 @@ import * as asyncModule from '../utils/asyncModule';
 // https://github.com/redux-saga/redux-saga/blob/master/examples/real-world/services/api.js
 
 const API_ROOT = process.env.API_ROOT;
-const cardCount = 5;
 
 export function fetchCard() {
-    return fetch(`http://${API_ROOT}games/car`, {
+    return fetch(`http://${API_ROOT}games/card`, {
         mode: 'cors',
     })
     .then(asyncModule.checkStatus)
@@ -16,8 +15,7 @@ export function fetchCard() {
     .catch(error => ({ error }));
 }
 
-export function connectWS() {
-    const answer = Math.floor( Math.random() * (cardCount + 1 - 1) ) + 1;
+export function connectWS(answer) {
     const ws = new WebSocket(`ws://${API_ROOT}games/ws/event`, [answer]);
 
     // Todo error handling.

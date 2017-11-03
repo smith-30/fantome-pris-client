@@ -6,10 +6,14 @@ import FlatButton from 'material-ui/FlatButton';
 import { fetchCard } from '../../actions';
 import { deckField } from '../../styles/deckField.scss';
 
+const cardStyle = {
+    width: 200
+};
+
 // カードは横向きでいいかも
 const DeckField = ({card, game, drawCard}) => (
   <div className={deckField}>
-    <Card>
+    <Card style={cardStyle}>
       <CardMedia
         overlay={<CardTitle title="Draw Card" subtitle="" />}
       >

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Game from './Game';
+import GameField from './GameField';
 import ResultModal from './ResultModal';
 import DeckField from './DeckField';
 
@@ -10,7 +10,7 @@ import ErrorSnackbarContainer from '../ErrorSnackbarContainer';
 const App = () => {
     return (
         <div>
-          <Game />
+          <GameField />
           <DeckField />
           <ResultModal />
           <ErrorSnackbarContainer />
