@@ -24,5 +24,30 @@ export function connectWS(answer) {
         console.log('Connected');
     };
 
+    ws.onerror = (error) => {
+        console.log('WebSocket error ' + error);
+        return {};
+    };
+
     return ws;
+}
+
+export function sendAnswer(wsConn, answer) {
+    return new Promise(resolve => {
+        wsConn.send(
+          JSON.stringify({
+              number: answer
+          })
+        );
+
+        wsConn.onmessage = (e) => {
+            let msg = null;
+            try {
+                msg = JSON.parse(e.data);
+            } catch(error) {
+                console.error(`Error parsing : ${e.data}`);
+            }
+            resolve(msg);
+        };
+    });
 }

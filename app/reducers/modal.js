@@ -2,12 +2,14 @@ import * as types from '../actions/types';
 
 const modal = (state = { open: false }, action) => {
     switch (action.type) {
-        case types.OPEN:
-            state.open = true;
-            return state;
-        case types.CLOSE:
-            state.open = false;
-            return state;
+        case types.OPEN_MODAL:
+            return Object.assign({}, state, {
+                open: true,
+            });
+        case types.CLOSE_MODAL:
+            return Object.assign({}, state, {
+                open: false,
+            });
         default:
             return state;
     }

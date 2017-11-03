@@ -6,6 +6,7 @@ import { increment, decrement, close } from '../../actions';
 import ResultModal from '../../components/games/ResultModal';
 
 const ResultModalContainer = ({ modal, players, doClose, doInc, doDec }) => {
+    console.log('container' + JSON.stringify(modal));
     return (
       <ResultModal
         modal={modal}

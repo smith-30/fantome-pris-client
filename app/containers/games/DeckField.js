@@ -10,6 +10,8 @@ const cardStyle = {
     width: 200
 };
 
+// Todo デフォルトのカードパスをセット.
+
 // カードは横向きでいいかも
 const DeckField = ({card, game, drawCard}) => (
   <div className={deckField}>

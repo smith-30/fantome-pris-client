@@ -5,6 +5,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import { footer } from '../styles/footer.scss';
 import Routes from '../routes';
 
+// Todo set footer
+
 const App = () =>
     <MuiThemeProvider>
         {/* <div>

@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, take, takeEvery } from 'redux-saga/effects';
 import Api from '../services';
 import * as types from '../actions/types';
 
@@ -19,6 +19,10 @@ function* fetchCard() {
         const wsConn = yield call(Api.connectWS, card.answer);
         yield put({type: types.CONNECT_WS, wsConn: wsConn});
 
+        // Todo 別タスクに切り分けてsubし続けたい
+        // start subscribe
+        // yield fork(receiveAnswer(wsConn));
+
         // change game status
         yield put({type: types.PLAY});
 
@@ -29,12 +33,45 @@ function* fetchCard() {
     }
 }
 
-// function* watchFetchCard() {
-      //  const loop = true;
-//     while(loop) {
-//         // const {card} = yield take(types.FETCH_CARD, fetchCard);
-//         yield take(types.FETCH_CARD, fetchCard);
-//         // yield fork(loadStargazers, fullName, true)
+function* sendAnswer() {
+    const { wsConn, answer } = yield take(types.TOUCH);
+    const isConn = wsConn instanceof WebSocket;
+
+    // check wsConn
+    if (!isConn) {
+        return;
+    }
+
+    try {
+        const msg = yield call(Api.sendAnswer, wsConn, answer);
+
+        if (msg.result) {
+            yield put({type: types.OPEN_MODAL});
+            yield put({type: types.READY});
+        }
+    } catch (e) {
+        yield put({type: types.READY});
+    }
+}
+
+// function* receiveAnswer(wsConn) {
+//     let loop = true;
+//     while (loop) {
+//         if (!wsConn instanceof WebSocket) {
+//             loop = false;
+//         }
+
+//         wsConn.onmessage = (e) => {
+//             let msg = null;
+//             try {
+//                 msg = JSON.parse(e.data);
+//             } catch(error) {
+//                 console.error(`Error parsing : ${e.data}`);
+//             }
+//             if (msg) {
+//                 console.log(msg);
+//             }
+//         };
 //     }
 // }
 
@@ -49,6 +86,8 @@ function* fetchCard() {
 */
 function* mySaga() {
     yield takeEvery(types.FETCH_CARD, fetchCard);
+    yield takeEvery(types.TOUCH, sendAnswer);
+    // yield takeEvery(types.TOUCH, receiveAnswer);
 }
 
 // export default function* root() {

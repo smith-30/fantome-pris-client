@@ -21,13 +21,13 @@ export function ready() {
 
 export function open() {
     return {
-        type: types.OPEN,
+        type: types.OPEN_MODAL,
     };
 }
 
 export function close() {
     return {
-        type: types.CLOSE,
+        type: types.CLOSE_MODAL,
     };
 }
 
@@ -70,8 +70,10 @@ export function closeWS() {
     };
 }
 
-export function sendAnswer() {
+export function touch(wsConn, ans) {
     return{
-        type: types.SEND_ANSWER
+        type: types.TOUCH,
+        wsConn: wsConn,
+        answer: ans
     };
 }
