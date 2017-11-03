@@ -4,13 +4,21 @@ import * as types from '../actions/types';
 
 // ワーカー Saga: FETCH_CARD Action によって起動する
 function* fetchCard() {
-    console.log(types.FETCH_CARD);
     try {
+        // fetch card
         const card = yield call(Api.fetchCard);
-        console.log(card);
-        yield put({type: 'FETCH_CARD_SUCCESS', card: card});
+
+        // create websocket connection
+        const wsConn = yield call(Api.connectWS);
+        yield put({type: types.CONNECT_WS, wsConn: wsConn});
+
+        // change game status
+        yield put({type: types.PLAY});
+
+        // change card state
+        yield put({type: types.FETCH_CARD_SUCCESS, card: card});
     } catch (e) {
-        yield put({type: 'CARD_FETCH_FAILED', message: e.message});
+        yield put({type: 'FETCH_CARD_FAILED', message: e.message});
     }
 }
 
@@ -33,7 +41,7 @@ function* fetchCard() {
   ユーザ情報の並列取得にも対応しています。
 */
 function* mySaga() {
-    yield takeEvery('FETCH_CARD', fetchCard);
+    yield takeEvery(types.FETCH_CARD, fetchCard);
 }
 
 // export default function* root() {

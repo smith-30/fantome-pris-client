@@ -13,3 +13,5 @@ export const FETCH_CARD_SUCCESS = 'FETCH_CARD_SUCCESS';
 export const CONNECT_WS = 'CONNECT_WS';
 export const CLOSE_WS = 'CLOSE_WS';
 export const SEND_ANSWER = 'SEND_ANSWER';
+
+export const FETCH_CARD_FAILED = 'FETCH_CARD_FAILED';

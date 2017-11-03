@@ -3,21 +3,34 @@ import * as asyncModule from '../utils/asyncModule';
 
 // https://github.com/redux-saga/redux-saga/blob/master/examples/real-world/services/api.js
 
-// Todo from const.
 const API_ROOT = process.env.API_ROOT;
+const cardCount = 5;
 
 export function fetchCard() {
-    return fetch(`${API_ROOT}games/card`, {
+    return fetch(`http://${API_ROOT}games/card`, {
         mode: 'cors',
     })
     .then(asyncModule.checkStatus)
     .then(asyncModule.parseJSON)
     .catch((error) => {
         console.log('request failed', error);
-        return error;
+        throw new Error(error);
     })
     .then((data) => {
-        console.log(data);
+        console.log('fetched', data);
         return data;
     });
+}
+
+export function connectWS() {
+    const answer = Math.floor( Math.random() * (cardCount + 1 - 1) ) + 1;
+    const ws = new WebSocket(`ws://${API_ROOT}games/ws/event`, [answer]);
+
+    // Todo error handling.
+
+    ws.onopen = () =>  {
+        console.log('Connected');
+    };
+
+    return ws;
 }

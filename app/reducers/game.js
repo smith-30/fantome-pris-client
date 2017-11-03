@@ -1,11 +1,6 @@
 import * as types from '../actions/types';
 
-const initialState = {
-    wsConn: {},
-    isPlay: false,
-};
-
-const game = (state = initialState, action) => {
+const game = (state = { wsConn: {}, isPlay: false }, action) => {
     switch (action.type) {
         case types.PLAY:
             return Object.assign({}, state, {
@@ -15,8 +10,13 @@ const game = (state = initialState, action) => {
             return Object.assign({}, state, {
                 isPlay: false
             });
+        case types.CONNECT_WS:
+            console.log('wsconn', action.wsConn);
+            return Object.assign({}, state, {
+                wsConn: action.wsConn
+            });
         default:
-            return initialState;
+            return state;
     }
 };
 

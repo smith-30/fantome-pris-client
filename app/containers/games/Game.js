@@ -7,6 +7,10 @@ import { play, decrement } from '../../actions';
 import { filterableTable } from '../../styles/filterableTable.scss';
 
 const Game = ({ game, onPlay, doDec }) => {
+    // if (!game.wsConn) {
+    //     game.wsConn.send(JSON.stringify({number: 1}));
+    // }
+    // console.log(game.wsConn.send(JSON.stringify({number: 1})));
     return (
         <div className={filterableTable}>
             <RaisedButton

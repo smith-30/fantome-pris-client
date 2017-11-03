@@ -1,10 +1,6 @@
 import * as types from '../actions/types';
 
-const initialState = {
-    open: false,
-};
-
-const modal = (state = initialState, action) => {
+const modal = (state = { open: false }, action) => {
     switch (action.type) {
         case types.OPEN:
             state.open = true;
@@ -13,7 +9,7 @@ const modal = (state = initialState, action) => {
             state.open = false;
             return state;
         default:
-            return initialState;
+            return state;
     }
 };
 

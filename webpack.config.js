@@ -29,7 +29,7 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
           'process.env.NODE_ENV': JSON.stringify('development'),
-          'process.env.API_ROOT': JSON.stringify('http://localhost:1323/api/v1/')
+          'process.env.API_ROOT': JSON.stringify('localhost:1323/api/v1/'),
         })
     ],
     eslint: {
