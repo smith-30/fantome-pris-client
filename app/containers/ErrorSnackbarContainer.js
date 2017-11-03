@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ErrorSnackbar from '../components/ErrorSnackbar';
 
-console.log(ErrorSnackbar);
-
 const ErrorSnackbarContainer = ({errors}) => {
     return (
       <ErrorSnackbar errors={errors} />

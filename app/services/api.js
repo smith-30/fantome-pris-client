@@ -12,12 +12,8 @@ export function fetchCard() {
     })
     .then(asyncModule.checkStatus)
     .then(asyncModule.parseJSON)
-    .catch((error) => {
-        console.log('request failed', error);
-        throw new Error(error);
-    })
+    .catch(error => ({ error }))
     .then((data) => {
-        console.log('fetched', data);
         return data;
     });
 }

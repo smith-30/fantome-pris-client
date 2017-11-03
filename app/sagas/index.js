@@ -4,10 +4,15 @@ import * as types from '../actions/types';
 
 // ワーカー Saga: FETCH_CARD Action によって起動する
 function* fetchCard() {
-    try {
-        // fetch card
-        const card = yield call(Api.fetchCard);
+    // fetch card
+    const { card, error } = yield call(Api.fetchCard);
 
+    if (!card) {
+        yield put({type: types.FETCH_CARD_FAILED, message: error.message});
+        return;
+    }
+
+    try {
         // create websocket connection
         const wsConn = yield call(Api.connectWS);
         yield put({type: types.CONNECT_WS, wsConn: wsConn});
@@ -18,7 +23,7 @@ function* fetchCard() {
         // change card state
         yield put({type: types.FETCH_CARD_SUCCESS, card: card});
     } catch (e) {
-        yield put({type: 'FETCH_CARD_FAILED', message: e.message});
+        yield put({type: types.FETCH_CARD_FAILED, message: e.message});
     }
 }
 
