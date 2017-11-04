@@ -12,7 +12,7 @@ const TouchObject = ({data, doTouch, wsConn}) => {
       <IconButton
         style={style}
         onClick={() => doTouch(wsConn, data.id)} >
-        <div className={data.style} />
+        <div className={data.style}/>
       </IconButton>
     );
 };
