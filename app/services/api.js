@@ -4,9 +4,11 @@ import * as asyncModule from '../utils/asyncModule';
 // https://github.com/redux-saga/redux-saga/blob/master/examples/real-world/services/api.js
 
 const API_ROOT = process.env.API_ROOT;
+const API_SCHEME = process.env.API_SCHEME;
+const WS_SCHEME = process.env.WS_SCHEME;
 
 export function fetchCard() {
-    return fetch(`http://${API_ROOT}games/card`, {
+    return fetch(`${API_SCHEME}://${API_ROOT}games/card`, {
         mode: 'cors',
     })
     .then(asyncModule.checkStatus)
@@ -16,7 +18,7 @@ export function fetchCard() {
 }
 
 export function connectWS(answer) {
-    const ws = new WebSocket(`ws://${API_ROOT}games/ws/event`, [answer]);
+    const ws = new WebSocket(`${WS_SCHEME}://${API_ROOT}games/ws/event`, [answer]);
 
     // Todo error handling.
 
