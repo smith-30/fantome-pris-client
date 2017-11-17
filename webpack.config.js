@@ -32,7 +32,6 @@ module.exports = {
           'process.env.API_ROOT': JSON.stringify('localhost:9000/api/v1/'),
           'process.env.API_SCHEME': JSON.stringify('http'),
           'process.env.WS_SCHEME': JSON.stringify('ws'),
-          'process.env.IMG_ROOT': JSON.stringify('/dist/img/'),
         })
     ],
     eslint: {
