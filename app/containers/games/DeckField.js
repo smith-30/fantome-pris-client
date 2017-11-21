@@ -6,16 +6,12 @@ import FlatButton from 'material-ui/FlatButton';
 import { fetchCard } from '../../actions';
 import { deckField } from '../../styles/deckField.scss';
 
-const cardStyle = {
-    // width: 200,
-};
-
 // Todo デフォルトのカードパスをセット.
 
 // カードは横向きでいいかも
 const DeckField = ({card, game, drawCard}) => (
   <div className={deckField}>
-    <Card style={cardStyle}>
+    <Card>
       <CardMedia>
         <img src={card.src} alt="" />
       </CardMedia>

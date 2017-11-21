@@ -6,32 +6,44 @@ import gameObjects from '../../constants/gameObjects';
 import TouchObjectContainer from './TouchObjectContainer';
 import { gameField } from '../../styles/gameField.scss';
 
+const styles = [
+    {
+        width: 120,
+        height: 120,
+        left: '40%'
+    },
+    {
+        width: 120,
+        height: 120,
+        left: '-15%',
+        top: '30%',
+    },
+    {
+        width: 120,
+        height: 120,
+        left: '30%',
+        top: '35%',
+    },
+    {
+        width: 120,
+        height: 120,
+        left: '-10%',
+        top: '75%',
+    },
+    {
+        width: 120,
+        height: 120,
+        left: '20%',
+        top: '35%',
+    },
+];
+
 const GameField = ({ objects }) => {
     let objectComponents = [];
-    // const objectNum = objects.length;
-    // const deg = 360.0 / objectNum;
-    // const red = (deg * Math.PI / 180.0);
-    // const circleR = 100 * 2.5; // 100はobjectのwidthだがとりあえず決め打ち.
 
     objects.forEach((o, idx) => {
-        console.log(idx);
-        // const style = {
-        //     width: 120,
-        //     height: 120,
-        // };
-        // const i = idx + 1;
-        // const x = Math.cos(red * i) * circleR + circleR;
-        // let y = Math.sin(red * i) * circleR + circleR;
-
-        // while (y > 400) {
-        //     y = y - 400;
-        // }
-
-        // style.left = x;
-        // style.top = y;
-
         objectComponents.push(
-          <TouchObjectContainer key={o.id} data={o}/>
+          <TouchObjectContainer key={o.id} data={o} style={styles[idx]}/>
         );
     });
 
