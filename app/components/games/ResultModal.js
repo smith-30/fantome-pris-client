@@ -26,7 +26,6 @@ const ResultModal = ({modal, players, doClose, doInc, doDec}) => {
     return (
       <div>
         <Dialog
-          title="Player Scores"
           actions={actions}
           open={modal.open}
           autoScrollBodyContent={initBool}

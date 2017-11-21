@@ -36,12 +36,6 @@ export function connectWS(answer) {
 
 export function sendAnswer(wsConn, answer) {
     return new Promise(resolve => {
-        wsConn.send(
-          JSON.stringify({
-              number: answer
-          })
-        );
-
         wsConn.onmessage = (e) => {
             let msg = null;
             try {
@@ -51,5 +45,11 @@ export function sendAnswer(wsConn, answer) {
             }
             resolve(msg);
         };
+
+        wsConn.send(
+          JSON.stringify({
+              number: answer
+          })
+        );
     });
 }

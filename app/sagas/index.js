@@ -90,10 +90,4 @@ function* mySaga() {
     // yield takeEvery(types.TOUCH, receiveAnswer);
 }
 
-// export default function* root() {
-//     yield all([
-//         fork(watchFetchCard),
-//     ]);
-// }
-
 export default mySaga;

@@ -6,6 +6,10 @@ import FlatButton from 'material-ui/FlatButton';
 import { fetchCard } from '../../actions';
 import { deckField } from '../../styles/deckField.scss';
 
+const buttonWidth = {
+    width: '100%'
+};
+
 // Todo デフォルトのカードパスをセット.
 
 // カードは横向きでいいかも
@@ -17,9 +21,10 @@ const DeckField = ({card, game, drawCard}) => (
       </CardMedia>
       <CardActions>
         <FlatButton
-          label="Play"
+          label="Draw"
           disabled={game.isPlay}
-          onClick={() => drawCard()} />
+          onClick={() => drawCard()}
+          style={buttonWidth} />
       </CardActions>
     </Card>
   </div>

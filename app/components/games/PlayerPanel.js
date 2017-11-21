@@ -2,6 +2,9 @@ import React from 'react';
 import {Card, CardActions, CardHeader} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import PropTypes from 'prop-types';
+import {blue200} from 'material-ui/styles/colors';
+import Plus from 'material-ui/svg-icons/image/control-point';
+import Minus from 'material-ui/svg-icons/content/remove-circle-outline';
 
 const PlayerPanel = ({player, doInc, doDec}) => (
   <Card>
@@ -11,8 +14,15 @@ const PlayerPanel = ({player, doInc, doDec}) => (
       avatar={player.avater}
     />
     <CardActions>
-        <FlatButton label="+1" onClick={() => doInc(player.id)} />
-        <FlatButton label="-1" onClick={() => doDec(player.id)} />
+        <FlatButton
+          onClick={() => doInc(player.id)}
+          hoverColor={blue200}
+          icon={<Plus/>}
+        />
+        <FlatButton
+          icon={<Minus/>}
+          hoverColor={blue200}
+          onClick={() => doDec(player.id)} />
     </CardActions>
   </Card>
 );

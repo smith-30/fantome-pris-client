@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 
 const TouchObject = ({data, doTouch, wsConn, style}) => {
-    console.log(style);
-    console.log(data);
     return (
       <IconButton
         style={style}
