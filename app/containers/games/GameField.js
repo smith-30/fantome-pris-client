@@ -6,6 +6,8 @@ import gameObjects from '../../constants/gameObjects';
 import TouchObjectContainer from './TouchObjectContainer';
 import { gameField } from '../../styles/gameField.scss';
 
+// @Todo デバイスによってスタイルの値を変えてしまう.
+//       ipad, iphone等で分ける
 const styles = [
     {
         width: 120,
