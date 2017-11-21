@@ -26,7 +26,6 @@ import { filterableTable } from '../styles/filterableTable.scss';
 
 const params = new URLSearchParams(location.search);
 const foo = params.get('player');
-console.log(foo);
 
 const FilterableTable = ({ filter, onFilter }) => {
     let input;

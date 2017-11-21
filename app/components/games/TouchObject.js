@@ -2,16 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 
-const style = {
-    width: 120,
-    height: 120,
-};
-
-const TouchObject = ({data, doTouch, wsConn}) => {
+const TouchObject = ({data, doTouch, wsConn, style}) => {
     return (
       <IconButton
         style={style}
-        onClick={() => doTouch(wsConn, data.id)} >
+        onClick={() => doTouch(wsConn, data.id)}
+        className="gameButton" >
         <div className={data.style}/>
       </IconButton>
     );
@@ -21,6 +17,7 @@ TouchObject.propTypes = {
     data: PropTypes.object,
     wsConn: PropTypes.object,
     doTouch: PropTypes.func,
+    style: PropTypes.object,
 };
 
 export default TouchObject;

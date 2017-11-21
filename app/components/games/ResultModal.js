@@ -10,7 +10,6 @@ import PlayerPanel from './PlayerPanel';
 let initBool = true;
 
 const ResultModal = ({modal, players, doClose, doInc, doDec}) => {
-    console.log(modal);
     const actions = [
         <FlatButton
           label="Done"

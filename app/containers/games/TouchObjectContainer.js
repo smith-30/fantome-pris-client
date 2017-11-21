@@ -4,16 +4,17 @@ import { connect } from 'react-redux';
 import { touch } from '../../actions';
 import TouchObject from '../../components/games/TouchObject';
 
-const TouchObjectContainer = ({data, wsConn, doTouch}) => {
+const TouchObjectContainer = ({data, wsConn, doTouch, style}) => {
     return (
-      <TouchObject data={data} wsConn={wsConn} doTouch={doTouch}/>
+      <TouchObject data={data} wsConn={wsConn} doTouch={doTouch} style={style} />
     );
 };
 
 TouchObjectContainer.propTypes = {
     data: PropTypes.object,
     wsConn: PropTypes.object,
-    doTouch: PropTypes.func
+    doTouch: PropTypes.func,
+    style: PropTypes.object,
 };
 
 const mapStateToProps = (state) => {

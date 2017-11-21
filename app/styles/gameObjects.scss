@@ -1,29 +1,30 @@
-.ghost {
+.gameObject {
+  position: absolute;
   width: 100px;
   height: 100px;
-  background: url('/img/objects/ghost.png');
+}
+
+.ghost {
+  @extend .gameObject;
+  background: url('/dist/img/objects/ghost.png');
 }
 
 .bottle {
-  width: 100px;
-  height: 100px;
-  background: url('/img/objects/bottle.png');
+  @extend .gameObject;
+  background: url('/dist/img/objects/bottle.png');
 }
 
 .mouse {
-  width: 100px;
-  height: 100px;
-  background: url('/img/objects/mouse.png');
+  @extend .gameObject;
+  background: url('/dist/img/objects/mouse.png');
 }
 
 .chair {
-  width: 100px;
-  height: 100px;
-  background: url('/img/objects/chair.png');
+  @extend .gameObject;
+  background: url('/dist/img/objects/chair.png');
 }
 
 .book {
-  width: 100px;
-  height: 100px;
-  background: url('/img/objects/book.png');
+  @extend .gameObject;
+  background: url('/dist/img/objects/book.png');
 }

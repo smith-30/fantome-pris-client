@@ -4,13 +4,11 @@ import Snackbar from 'material-ui/Snackbar';
 
 const ErrorSnackbar = ({ errors }) => {
     return (
-      <div>
-          <Snackbar
-            open={errors.open}
-            message={errors.message}
-            autoHideDuration={4000}
-          />
-      </div>
+      <Snackbar
+        open={errors.open}
+        message={errors.message}
+        autoHideDuration={4000}
+      />
     );
 };
 

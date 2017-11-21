@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {Card, CardActions, CardMedia, CardTitle} from 'material-ui/Card';
+import {Card, CardActions, CardMedia} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import { fetchCard } from '../../actions';
 import { deckField } from '../../styles/deckField.scss';
 
 const cardStyle = {
-    width: 200
+    // width: 200,
 };
 
 // Todo デフォルトのカードパスをセット.
@@ -16,9 +16,7 @@ const cardStyle = {
 const DeckField = ({card, game, drawCard}) => (
   <div className={deckField}>
     <Card style={cardStyle}>
-      <CardMedia
-        overlay={<CardTitle title="Draw Card" subtitle="" />}
-      >
+      <CardMedia>
         <img src={card.src} alt="" />
       </CardMedia>
       <CardActions>

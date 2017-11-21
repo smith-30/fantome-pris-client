@@ -12,7 +12,6 @@ const game = (state = { wsConn: {}, isPlay: false, score: 0 }, action) => {
                 wsConn: {}
             });
         case types.CONNECT_WS:
-            console.log('wsconn', action.wsConn);
             return Object.assign({}, state, {
                 wsConn: action.wsConn
             });

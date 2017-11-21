@@ -1,9 +1,9 @@
 .deckField {
-  padding: 100px;
-	background-color: #e0f7fa;
+  flex-grow: 0;
+  align-self: stretch;
+  flex-basis: 28%;
 }
 
 .cardField {
-  width: 100 !important;
-  height: 200 !important;
+  align-self: flex-end;
 }
