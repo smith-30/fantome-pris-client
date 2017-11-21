@@ -7,7 +7,7 @@ import TouchObjectContainer from './TouchObjectContainer';
 import { gameField } from '../../styles/gameField.scss';
 
 // @Todo デバイスによってスタイルの値を変えてしまう.
-//       ipad, iphone等で分ける
+//       ipad, iphone等で分ける.事前に作っといてUAで切り替える. storeみたいな感じで
 const styles = [
     {
         width: 120,
