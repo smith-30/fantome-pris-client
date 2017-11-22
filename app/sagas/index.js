@@ -1,4 +1,4 @@
-import { call, put, take, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import Api from '../services';
 import * as types from '../actions/types';
 
@@ -33,9 +33,19 @@ function* fetchCard() {
     }
 }
 
-function* sendAnswer() {
-    const { wsConn, answer } = yield take(types.TOUCH);
+function* sendAnswer(action) {
+    console.log('reach');
+    console.log(`action ${action}`);
+
+    const { wsConn, answer } = action;
+
+    // const { wsConn, answer } = yield take(types.TOUCH);
+
+    console.log(`ans -> : ${answer}`);
+
     const isConn = wsConn instanceof WebSocket;
+
+    console.log(`isConn: ${isConn}`);
 
     // check wsConn
     if (!isConn) {
@@ -53,27 +63,6 @@ function* sendAnswer() {
         yield put({type: types.READY});
     }
 }
-
-// function* receiveAnswer(wsConn) {
-//     let loop = true;
-//     while (loop) {
-//         if (!wsConn instanceof WebSocket) {
-//             loop = false;
-//         }
-
-//         wsConn.onmessage = (e) => {
-//             let msg = null;
-//             try {
-//                 msg = JSON.parse(e.data);
-//             } catch(error) {
-//                 console.error(`Error parsing : ${e.data}`);
-//             }
-//             if (msg) {
-//                 console.log(msg);
-//             }
-//         };
-//     }
-// }
 
 /**
  * fork
