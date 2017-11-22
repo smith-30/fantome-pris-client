@@ -34,18 +34,9 @@ function* fetchCard() {
 }
 
 function* sendAnswer(action) {
-    console.log('reach');
-    console.log(`action ${action}`);
-
     const { wsConn, answer } = action;
 
-    // const { wsConn, answer } = yield take(types.TOUCH);
-
-    console.log(`ans -> : ${answer}`);
-
     const isConn = wsConn instanceof WebSocket;
-
-    console.log(`isConn: ${isConn}`);
 
     // check wsConn
     if (!isConn) {
@@ -76,7 +67,6 @@ function* sendAnswer(action) {
 function* mySaga() {
     yield takeEvery(types.FETCH_CARD, fetchCard);
     yield takeEvery(types.TOUCH, sendAnswer);
-    // yield takeEvery(types.TOUCH, receiveAnswer);
 }
 
 export default mySaga;

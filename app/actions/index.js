@@ -71,7 +71,6 @@ export function closeWS() {
 }
 
 export function touch(wsConn, ans) {
-    console.log(ans);
     return{
         type: types.TOUCH,
         wsConn: wsConn,
