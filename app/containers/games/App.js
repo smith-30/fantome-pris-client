@@ -9,13 +9,6 @@ import { wrapper } from '../../styles/game.scss';
 import ErrorSnackbarContainer from '../ErrorSnackbarContainer';
 
 const App = () => {
-    console.log(screen.width);
-    console.log(screen.height);
-
-    const ua = navigator.userAgent.toLowerCase();
-
-    console.log(`ua::: ${ua}`);
-
     return (
       <div>
         <div className={wrapper} >
