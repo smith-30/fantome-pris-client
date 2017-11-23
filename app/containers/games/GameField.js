@@ -12,18 +12,18 @@ const styles = [
     {
         width: 120,
         height: 120,
-        left: '40%'
+        left: '30%'
     },
     {
         width: 120,
         height: 120,
-        left: '-15%',
+        left: '-30%',
         top: '30%',
     },
     {
         width: 120,
         height: 120,
-        left: '30%',
+        left: '20%',
         top: '35%',
     },
     {
