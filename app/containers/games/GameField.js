@@ -49,7 +49,6 @@ const GameField = ({ objects }) => {
         );
     });
 
-
     return (
         <div className={gameField}>
           {objectComponents}

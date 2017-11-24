@@ -3,27 +3,52 @@
   height: 100px;
 }
 
-.ghost {
+.dev_ghost {
   @extend .gameObject;
   background: url('/dist/img/objects/ghost.png');
 }
 
-.bottle {
+.dev_bottle {
   @extend .gameObject;
   background: url('/dist/img/objects/bottle.png');
 }
 
-.mouse {
+.dev_mouse {
   @extend .gameObject;
   background: url('/dist/img/objects/mouse.png');
 }
 
-.chair {
+.dev_chair {
   @extend .gameObject;
   background: url('/dist/img/objects/chair.png');
 }
 
-.book {
+.dev_book {
   @extend .gameObject;
   background: url('/dist/img/objects/book.png');
+}
+
+.ghost {
+  @extend .gameObject;
+  background: url('/img/objects/ghost.png');
+}
+
+.bottle {
+  @extend .gameObject;
+  background: url('/img/objects/bottle.png');
+}
+
+.mouse {
+  @extend .gameObject;
+  background: url('/img/objects/mouse.png');
+}
+
+.chair {
+  @extend .gameObject;
+  background: url('/img/objects/chair.png');
+}
+
+.book {
+  @extend .gameObject;
+  background: url('/img/objects/book.png');
 }
