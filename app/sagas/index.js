@@ -27,6 +27,7 @@ function* fetchCard() {
         yield put({type: types.PLAY});
 
         // change card state
+        card.isFlipped = true;
         yield put({type: types.FETCH_CARD_SUCCESS, card: card});
     } catch (e) {
         yield put({type: types.FETCH_CARD_FAILED, message: e.message});
@@ -49,6 +50,7 @@ function* sendAnswer(action) {
         if (msg.result) {
             yield put({type: types.OPEN_MODAL});
             yield put({type: types.READY});
+            yield put({type: types.SET_DEFAULT_CARD});
         }
     } catch (e) {
         yield put({type: types.READY});

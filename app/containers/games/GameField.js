@@ -30,7 +30,7 @@ const styles = [
         width: 120,
         height: 120,
         left: '-10%',
-        top: '75%',
+        top: '95%',
     },
     {
         width: 120,
