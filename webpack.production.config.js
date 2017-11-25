@@ -52,9 +52,9 @@ module.exports = {
         // plugin for passing in data to the js, like what NODE_ENV we are in.
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
-            'process.env.API_ROOT': JSON.stringify('150.95.175.157/api/v1/'),
-            'process.env.API_SCHEME': JSON.stringify('http'),
-            'process.env.WS_SCHEME': JSON.stringify('ws'),
+            'process.env.API_ROOT': JSON.stringify('www.smith-30.work/api/v1/'),
+            'process.env.API_SCHEME': JSON.stringify('https'),
+            'process.env.WS_SCHEME': JSON.stringify('wss'),
         })
     ],
 
