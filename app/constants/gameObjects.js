@@ -6,23 +6,23 @@ if (process.env.NODE_ENV === 'production') {
     objects = [
         {
             id: 1,
-            style: objectsStyles.ghost
+            style: objectsStyles.black_100
         },
         {
             id: 2,
-            style: objectsStyles.bottle
+            style: objectsStyles.blue_100
         },
         {
             id: 3,
-            style: objectsStyles.mouse
+            style: objectsStyles.green_100
         },
         {
             id: 4,
-            style: objectsStyles.chair
+            style: objectsStyles.red_100
         },
         {
             id: 5,
-            style: objectsStyles.book
+            style: objectsStyles.yellow_100
         },
     ];
 } else {

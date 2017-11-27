@@ -28,27 +28,27 @@
   background: url('/dist/img/objects/book.png');
 }
 
-.ghost {
+.black_100 {
   @extend .gameObject;
-  background: url('/img/objects/ghost.png');
+  background: url('/img/objects/black_100.png');
 }
 
-.bottle {
+.blue_100 {
   @extend .gameObject;
-  background: url('/img/objects/bottle.png');
+  background: url('/img/objects/blue_100.png');
 }
 
-.mouse {
+.green_100 {
   @extend .gameObject;
-  background: url('/img/objects/mouse.png');
+  background: url('/img/objects/green_100.png');
 }
 
-.chair {
+.red_100 {
   @extend .gameObject;
-  background: url('/img/objects/chair.png');
+  background: url('/img/objects/red_100.png');
 }
 
-.book {
+.yellow {
   @extend .gameObject;
-  background: url('/img/objects/book.png');
+  background: url('/img/objects/yellow_100.png');
 }
