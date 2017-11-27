@@ -55,6 +55,7 @@ module.exports = {
             'process.env.API_ROOT': JSON.stringify('www.smith-30.work/api/v1/'),
             'process.env.API_SCHEME': JSON.stringify('https'),
             'process.env.WS_SCHEME': JSON.stringify('wss'),
+            'process.env.IMG_ROOT': JSON.stringify('/img/cards'),
         })
     ],
 
