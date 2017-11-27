@@ -39,7 +39,7 @@ const users = (state = [], action) => {
                     id: i,
                     name: `Player [${i}]`,
                     score: 0,
-                    avater: `img/sample/${i}.png`
+                    avater: `img/user/${i}.png`
                 };
                 players.push(user);
             }
