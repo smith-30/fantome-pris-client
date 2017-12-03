@@ -40,6 +40,8 @@ const styles = [
     },
 ];
 
+const hidden = {visibility: 'visible'};
+
 const GameField = ({ objects }) => {
     let objectComponents = [];
 
@@ -50,9 +52,9 @@ const GameField = ({ objects }) => {
     });
 
     return (
-        <div className={gameField}>
-          {objectComponents}
-        </div>
+      <div className={gameField} style={hidden}>
+        {objectComponents}
+      </div>
     );
 };
 

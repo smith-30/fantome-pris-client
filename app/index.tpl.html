@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="height: 100%; background-color: #ffffff;">
 
 <head>
   <meta charset="utf-8">
@@ -10,24 +10,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body style="height: 100%;">
   <div id="root"></div>
 </body>
 
 <script>
-  window.onload = function () {
-
-    document.body.onclick = function () {
-      if (this.webkitRequestFullScreen) {
-        this.webkitRequestFullScreen();
-      }
-      else if (this.mozRequestFullScreen) {
-        this.mozRequestFullScreen();
-      }
-      else {
-        alert("not found")
-      }
-    };
+  window.onload = () => {
+    window.scrollTo(0, 0);
   };
 </script>
 
