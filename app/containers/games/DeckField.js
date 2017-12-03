@@ -12,8 +12,8 @@ const buttonWidth = {
 };
 
 // カードは横向きでいいかも
-const DeckField = ({card, game, drawCard}) => (
-  <div className= {deckField}>
+const DeckField = ({card, game, drawCard, screen}) => (
+  <div className={deckField} style={screen.visibility}>
     <ReactCardFlip isFlipped={card.isFlipped}>
       <Card key="front">
         <CardMedia>
@@ -45,6 +45,7 @@ const DeckField = ({card, game, drawCard}) => (
 );
 
 DeckField.propTypes = {
+    screen: PropTypes.object,
     game: PropTypes.object,
     card: PropTypes.object,
     drawCard: PropTypes.func,
@@ -52,6 +53,7 @@ DeckField.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
+        screen: state.screen,
         card: state.card,
         game: state.game,
     };

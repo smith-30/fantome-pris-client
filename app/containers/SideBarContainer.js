@@ -9,17 +9,16 @@ import { open, cancelFullScreen, requestFullScreen } from '../actions';
 import { side } from '../styles/side.scss';
 
 const SideBarContainer = ({screen, openModal, _requestFullScreen, _cancelFullScreen}) => {
-    console.log(_requestFullScreen);
     return (
       <div className={side}>
         {(() => {
-            return screen.fullScreen ? <IconButton tooltip="Full Screen" onClick={() => _requestFullScreen()}>
+            return screen.isFullScreen ? <IconButton tooltip="Full Screen" onClick={() => _cancelFullScreen()}>
             <Power
                 color={green600}
             />
           </IconButton>
           :
-          <IconButton tooltip="Exit" onClick={() => _cancelFullScreen()}>
+          <IconButton tooltip="Exit" onClick={() => _requestFullScreen()}>
             <Power
                 color={red600}
             />

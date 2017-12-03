@@ -68,7 +68,7 @@ function* requestFullScreen() {
         // メソッドを実行
         rootElement.requestFullscreen();
         document.body.webkitRequestFullScreen();
-        yield put({type: types.REQUEST_FULL_SCREEN});
+        yield put({type: types.REQUEST_FULL_SCREEN_EXECUTE});
     } catch (e) {
         yield put({type: types.CHANGE_SCREEN_FAILED, message: 'cannot change screen'});
     }
@@ -81,7 +81,7 @@ function* cancelFullScreen() {
 
         // メソッドを実行
         document.exitFullscreen();
-        yield put({type: types.CANCEL_FULL_SCREEN});
+        yield put({type: types.CANCEL_FULL_SCREEN_EXECUTE});
     } catch (e) {
         yield put({type: types.CHANGE_SCREEN_FAILED, message: 'cannot change screen'});
     }
