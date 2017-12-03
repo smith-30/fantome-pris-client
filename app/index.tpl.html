@@ -8,6 +8,10 @@
   <title>Fantôme pris</title>
   <meta name="description" content="React Redux React-Router with Webpack Boilerplate">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 
 <body style="height: 100%;">
@@ -15,19 +19,19 @@
 </body>
 
 <script>
-  window.onload = function () {
-    document.body.onclick = function () {
-      if (this.webkitRequestFullScreen) {
-        this.webkitRequestFullScreen();
-      }
-      else if (this.mozRequestFullScreen) {
-        this.mozRequestFullScreen();
-      }
-      else {
-        alert("not found")
-      }
-    };
-  };
+  // window.onload = function () {
+  //   document.body.onclick = function () {
+  //     if (this.webkitRequestFullScreen) {
+  //       this.webkitRequestFullScreen();
+  //     }
+  //     else if (this.mozRequestFullScreen) {
+  //       this.mozRequestFullScreen();
+  //     }
+  //     else {
+  //       alert("not found")
+  //     }
+  //   };
+  // };
 </script>
 
 </html>

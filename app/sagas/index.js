@@ -57,6 +57,36 @@ function* sendAnswer(action) {
     }
 }
 
+function* requestFullScreen() {
+    try {
+        // html要素を取得
+        const rootElement = document.documentElement;
+
+        // メソッドを統一 (本実装されてないブラウザが多い)
+        rootElement.requestFullscreen = rootElement.requestFullscreen || rootElement.mozRequestFullScreen || rootElement.webkitRequestFullscreen || rootElement.msRequestFullscreen;
+
+        // メソッドを実行
+        rootElement.requestFullscreen();
+        document.body.webkitRequestFullScreen();
+        yield put({type: types.REQUEST_FULL_SCREEN});
+    } catch (e) {
+        yield put({type: types.CHANGE_SCREEN_FAILED, message: 'cannot change screen'});
+    }
+}
+
+function* cancelFullScreen() {
+    try {
+        // メソッドを統一 (本実装されてないブラウザが多い)
+        document.exitFullscreen = document.exitFullscreen || document.cancelFullScreen || document.mozCancelFullScreen || document.webkitCancelFullScreen || document.msExitFullscreen;
+
+        // メソッドを実行
+        document.exitFullscreen();
+        yield put({type: types.CANCEL_FULL_SCREEN});
+    } catch (e) {
+        yield put({type: types.CHANGE_SCREEN_FAILED, message: 'cannot change screen'});
+    }
+}
+
 /**
  * fork
  * https://github.com/redux-saga/redux-saga/blob/master/examples/real-world/sagas/index.js
@@ -69,6 +99,8 @@ function* sendAnswer(action) {
 function* mySaga() {
     yield takeEvery(types.FETCH_CARD, fetchCard);
     yield takeEvery(types.TOUCH, sendAnswer);
+    yield takeEvery(types.REQUEST_FULL_SCREEN, requestFullScreen);
+    yield takeEvery(types.CANCEL_FULL_SCREEN, cancelFullScreen);
 }
 
 export default mySaga;

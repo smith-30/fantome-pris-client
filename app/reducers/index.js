@@ -9,6 +9,7 @@ import modal from './modal';
 import game from './game';
 import card from './card';
 import errors from './errors';
+import screen from './screen';
 
 const rootReducer = combineReducers({
     errors,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     game,
     modal,
     users,
+    screen,
     routing
 });
 

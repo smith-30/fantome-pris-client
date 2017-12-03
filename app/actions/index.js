@@ -77,3 +77,15 @@ export function touch(wsConn, ans) {
         answer: ans
     };
 }
+
+export function requestFullScreen() {
+    return{
+        type: types.REQUEST_FULL_SCREEN,
+    };
+}
+
+export function cancelFullScreen() {
+    return{
+        type: types.CANCEL_FULL_SCREEN,
+    };
+}

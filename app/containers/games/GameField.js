@@ -40,9 +40,7 @@ const styles = [
     },
 ];
 
-const hidden = {visibility: 'visible'};
-
-const GameField = ({ objects }) => {
+const GameField = ({ objects, screen }) => {
     let objectComponents = [];
 
     objects.forEach((o, idx) => {
@@ -52,14 +50,14 @@ const GameField = ({ objects }) => {
     });
 
     return (
-      <div className={gameField} style={hidden}>
+      <div className={gameField} style={screen.visibility}>
         {objectComponents}
       </div>
     );
 };
 
 GameField.propTypes = {
-    game: PropTypes.object,
+    screen: PropTypes.object,
     objects: PropTypes.array,
     onPlay: PropTypes.func,
     doDec: PropTypes.func,
@@ -67,7 +65,7 @@ GameField.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        game: state.game,
+        screen: state.screen,
         objects: gameObjects
     };
 };
