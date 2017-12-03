@@ -13,7 +13,7 @@ const buttonWidth = {
 
 // カードは横向きでいいかも
 const DeckField = ({card, game, drawCard}) => (
-  <div className={deckField}>
+  <div className= {deckField}>
     <ReactCardFlip isFlipped={card.isFlipped}>
       <Card key="front">
         <CardMedia>

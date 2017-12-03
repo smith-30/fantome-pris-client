@@ -12,30 +12,30 @@ const styles = [
     {
         width: 120,
         height: 120,
-        left: '30%'
+        left: '5%'
     },
     {
         width: 120,
         height: 120,
-        left: '-30%',
-        top: '30%',
+        left: '40%',
+        // top: '30%',
     },
     {
         width: 120,
         height: 120,
-        left: '20%',
+        left: '-15%',
+        top: '40%',
+    },
+    {
+        width: 120,
+        height: 120,
+        left: '65%',
         top: '35%',
     },
     {
         width: 120,
         height: 120,
-        left: '-10%',
-        top: '95%',
-    },
-    {
-        width: 120,
-        height: 120,
-        left: '20%',
+        left: '-20%',
         top: '35%',
     },
 ];
