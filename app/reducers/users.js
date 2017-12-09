@@ -37,7 +37,6 @@ const users = (state = [], action) => {
             for (let i = 1; i <= playerCount; i++) {
                 const user = {
                     id: i,
-                    name: `Player [${i}]`,
                     score: 0,
                     avater: `img/user/${i}.png`
                 };

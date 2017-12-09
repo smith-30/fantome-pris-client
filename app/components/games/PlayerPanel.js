@@ -9,8 +9,7 @@ import Minus from 'material-ui/svg-icons/content/remove-circle-outline';
 const PlayerPanel = ({player, doInc, doDec}) => (
   <Card>
     <CardHeader
-      title={player.name}
-      subtitle={player.score}
+      title={player.score}
       avatar={player.avater}
     />
     <CardActions>
