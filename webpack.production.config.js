@@ -53,7 +53,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
             'process.env.API_ROOT': JSON.stringify('www.smith-30.work/api/v1/'),
-            'process.env.API_SCHEME': JSON.stringify('http'),
+            'process.env.API_SCHEME': JSON.stringify('https'),
             'process.env.WS_SCHEME': JSON.stringify('ws'),
             'process.env.IMG_ROOT': JSON.stringify('/img/cards'),
         })
